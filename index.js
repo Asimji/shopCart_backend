@@ -13,8 +13,8 @@ app.use(cors())
 
 app.use(express.json())
 app.use(userRouter)
-app.use(productRouter)
 app.use(cartRoute)
+app.use(productRouter)
 
 
 app.listen(process.env.port,async()=>{
