@@ -10,10 +10,8 @@ const productSchema=mongoose.Schema({
         require:true
     },
     image:{
-       type:"array",
-       items:{
-        type:String
-       }
+       type:'array',
+       items:String
     },
     description:{
         type:String,
