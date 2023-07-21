@@ -30,9 +30,11 @@ cartRoute.post('/create',async(req,res)=>{
 })
 
 cartRoute.get("/",async(req,res)=>{
+    const userId=req.body.userId
     try {
-        let cart=await cartModel.find()
-        res.status(200).json({cart})
+         let cart=await cartModel.find({userId})
+         res.status(200).json({cart})
+    
     } catch (error) {
         res.status(400).json({error:error.message})
     }
