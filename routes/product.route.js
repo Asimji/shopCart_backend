@@ -7,13 +7,13 @@ const productRouter=express.Router();
 
 productRouter.get('/',async(req,res)=>{
     try {
-        let { type, q, page, limit, sortOrder,sortBy } = req.query;
+        let { category, q, page, limit, sortOrder,sortBy } = req.query;
         let filter = {};
     
-        if (type) {
+        if (category) {
           // Convert type to an array if it's a single value
-          const types = Array.isArray(type) ? type : [type];
-          filter.type = { $in: types };
+          const categories = Array.isArray(category) ? category : [category];
+          filter.category = { $in: categories };
         }
     
         if (q) {
