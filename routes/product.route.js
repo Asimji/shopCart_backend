@@ -5,7 +5,7 @@ const adminAuth = require("../middleware/admin.middleware");
 
 const productRouter=express.Router();
 
-productRouter.get('/products',async(req,res)=>{
+productRouter.get('/',async(req,res)=>{
     try {
         let { type, q, page, limit, sortOrder,sortBy } = req.query;
         let filter = {};
@@ -42,7 +42,7 @@ productRouter.get('/products',async(req,res)=>{
     }
 })
 
-productRouter.get('/products/:id',async(req,res)=>{
+productRouter.get('/:id',async(req,res)=>{
     const {id}=req.params;
     try {
         const product=await productModel.findOne({_id:id})

@@ -12,9 +12,9 @@ const app=express()
 app.use(cors())
 
 app.use(express.json())
-app.use(userRouter)
-app.use(cartRoute)
-app.use(productRouter)
+app.use("/user",userRouter)
+app.use("/cart",cartRoute)
+app.use("/product",productRouter)
 
 
 app.listen(process.env.port,async()=>{
