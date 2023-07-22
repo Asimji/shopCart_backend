@@ -10,7 +10,7 @@ if(token){
             res.status(200).json({msg:"Already Logout please Login!"})
         }
         else{
-            var decoded = jwt.verify(token, process.env.SecretKey);
+            var decoded = jwt.verify(token, "shopcart");
             req.body.userName=decoded._doc.name
             req.body.userId=decoded._doc._id
             console.log(decoded,req.body.userId)

@@ -10,7 +10,7 @@ if(token){
             res.status(200).json({msg:"Already Logout please Login!"})
         }
         else{
-            var decoded = jwt.verify(token, process.env.SecretKey);
+            var decoded = jwt.verify(token, "shopcart");
           console.log(decoded)
             console.log(decoded._doc.name,decoded._doc.email)
             if(decoded._doc.name==='Admin' && decoded._doc.email==='admin@gmail.com'){

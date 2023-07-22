@@ -45,7 +45,7 @@ userRouter.post("/signup", async (req, res) => {
             bcrypt.compare(password, user.password, (err, result)=> {
                 // result == true
                 if(result){
-                    var token = jwt.sign({ ...user }, process.env.SecretKey);
+                    var token = jwt.sign({ ...user }, "shopcart");
                     res.status(200).json({msg:`Welcome ${user.name} You are Now Login`,token})
                 }
                 else{
